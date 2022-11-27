@@ -5,11 +5,25 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+      
+   <%= stylesheet_link_tag 'https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css' %>
+     
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
   </head>
 
+         <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+        <li><span class="nav-link px-2 link-secondary"><%= link_to "Главная", home_path%></span></li>
+        <li><span class="nav-link px-2 link-secondary"><%= link_to "Новый пост", new_post_path%></span></li>
+                   <li><span class="nav-link px-2 link-secondary"><%= link_to "О нас", about_path%></span></li>
+         <button type="button" class="btn btn-outline-primary me-2">Login</button>
+        <button type="button" class="btn btn-primary">Sign-up</button>
+      </ul>
+
+    </header>
+  </div>
+  <div class ="container">
   <body>
     <%= yield %>
   </body>
+  </div>
 </html>
