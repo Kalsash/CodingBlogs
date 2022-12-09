@@ -13,16 +13,16 @@
   </head>
   <nav id="nav">
     <ul class="container">
-      <li><span class="nav-link px-2 link-secondary"><%= link_to "Главная", home_path%></span></li>
+      <li><span class="nav-link px-2 link-secondary"><%= link_to "HomePage", home_path%></span></li>
 
       <% if user_signed_in? %>
-        <li><span class="nav-link px-2 link-secondary"><%= link_to "Новый пост", new_post_path%></span></li>
-        <li><span class="nav-link px-2 link-secondary"><%= link_to "LogOut", destroy_user_session_path, :method => :delete%></span></li>
+        <li><span class="nav-link px-2 link-secondary"><%= link_to "Create Post", new_post_path%></span></li>
+        <li><span class="nav-link px-2 link-secondary"><%= link_to "Log Out", destroy_user_session_path, :method => :delete%></span></li>
       <% else %>
-        <li><span class="nav-link px-2 link-secondary"><%= link_to "LogIn", new_user_session_path%></span></li>
+        <li><span class="nav-link px-2 link-secondary"><%= link_to "Log In", new_user_session_path%></span></li>
       <% end %>
 
-      <li><span class="nav-link px-2 link-secondary"><%= link_to "О нас", about_path%></span></li>
+      <li><span class="nav-link px-2 link-secondary"><%= link_to "About Us", about_path%></span></li>
     </ul>
   </nav>
 

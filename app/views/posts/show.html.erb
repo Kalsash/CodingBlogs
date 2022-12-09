@@ -6,7 +6,7 @@
   turbo_confirm: "Are you sure?"
 }, :class => 'btn btn-warning' %>
   
-<%= link_to "Удалить", posts_path(@post), data: {method: :delete}, :class => 'btn btn-danger' %>
+<%= button_to "Удалить", post_path(@post),  method: :delete, :class => 'btn btn-danger' %>
 <hr>
 <h2>Все комментарии</h2>
 <br>
