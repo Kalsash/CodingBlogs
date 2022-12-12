@@ -1,6 +1,13 @@
 <br>
 <h1 xmlns="http://www.w3.org/1999/html"><%= @post.title %></h1>
 <p><%=@post.body %></p>
+<hr>
+<%= link_to "Редактировать", edit_post_path(@post),data: {
+  turbo_confirm: "Are you sure?"
+}, :class => 'btn btn-warning' %>
+  
+<%= button_to "Удалить", post_path(@post),  method: :delete, :class => 'btn btn-danger' %>
+<hr>
 <h2>Все комментарии</h2>
 <br>
 <% @post.comments.each do |comment| %>

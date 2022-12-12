@@ -1,0 +1,46 @@
+<!-- Home -->
+<article id="top" class="wrapper style1">
+  <div class="container">
+    <div class="row">
+      <div class="col-4 col-5-large col-12-medium">
+        <span class="image fit"><%= image_tag("pic00.jpg", :alt => "") %></span>
+      </div>
+      <div class="col-8 col-7-large col-12-medium">
+        <header>
+          <h1>Welcome! This is </h1>
+          <h1> <strong>Coding Blogs</strong></h1>
+        </header>
+        <p>A web-site for programmers from over the world</p>
+        <a href="#portfolio" class="button large scrolly">Learn about what I do</a>
+      </div>
+    </div>
+  </div>
+</article>
+
+
+
+<!-- Portfolio -->
+<article id="portfolio" class="wrapper style3">
+  <div class="container">
+    <header>
+      <h2>Here’s some posts I made recently.</h2>
+      <p>Recently added</p>
+    </header>
+    <div class="row">
+
+        <% @post.each do |post| %>
+        <div class="col-4 col-6-medium col-12-small">
+          <article class="box style2">
+            <%= link_to image_tag("codecode.jpg", :alt => ""), post_path(post), :class => 'image featured' %>
+            <%= link_to post.title, post_path(post), :class => 'btn btn-outline-primary' %>
+            <p><%= post.body %></p>
+          </article>
+        </div>
+        <% end %>
+    </div>
+    <footer>
+      <p>Get a free registration</p>
+      <a href="#contact" class="button large scrolly">Create a new account</a>
+    </footer>
+  </div>
+</article>

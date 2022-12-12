@@ -16,8 +16,11 @@
       <li><span class="nav-link px-2 link-secondary"><%= link_to "HomePage", home_path%></span></li>
 
       <% if user_signed_in? %>
-        <li><span class="nav-link px-2 link-secondary"><%= link_to "Profile", user_root_path%></span></li>
-        <li><span class="nav-link px-2 link-secondary"><%= link_to "Create Post", new_post_path%></span></li>
+        <% if current_user.admin? %>
+          <li><span class="nav-link px-2 link-secondary"><%= link_to "Create Post", new_admin_post_path%></span></li>
+        <% else %>
+          <li><span class="nav-link px-2 link-secondary"><%= link_to "Profile", user_root_path%></span></li>
+        <% end %>
         <li><span class="nav-link px-2 link-secondary"><%= link_to "Log out", destroy_session_path(:user), :method => :delete %></span></li>
       <% else %>
         <li><span class="nav-link px-2 link-secondary"><%= link_to "Log In", new_user_session_path%></span></li>
