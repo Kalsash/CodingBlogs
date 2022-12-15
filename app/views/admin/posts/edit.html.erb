@@ -1,6 +1,6 @@
 <br>
 <h1>Редактировать пост</h1>
-<%= form_for [:admin,@post], url: post_path(@post), method: :patch do |f| %>
+<%= form_for [:admin,@post] do |f| %>
  <% if @post.errors.any? %>
     <% @post.errors.full_messages.each do |msg| %> 
       <div class="alert alert-danger"> <%= msg %></div>
