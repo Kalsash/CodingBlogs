@@ -1,12 +1,19 @@
 <br>
-<h1 xmlns="http://www.w3.org/1999/html"><%= @post.title %></h1>
-<p><%=@post.body %></p>
-<hr>
-<%= link_to "Редактировать", edit_admin_post_path(@post),data: {
-  turbo_confirm: "Are you sure?"
-}, :class => 'btn btn-warning' %>
+<h1 class="text-center" xmlns="http://www.w3.org/1999/html"><%= @post.title %></h1>
 
-<%= button_to "Удалить", admin_post_path(@post),  method: :delete, :class => 'btn btn-danger' %>
+<p><%=@post.body %></p>
+
+<% if user_signed_in? %>
+  <% if current_user.admin? %>
+    <hr>
+    <%= link_to "Редактировать", edit_admin_post_path(@post),data: {
+      turbo_confirm: "Are you sure?"
+    }, :class => 'btn btn-warning' %>
+    <%= button_to "Удалить", admin_post_path(@post),  method: :delete, :class => 'btn btn-danger' %>
+    <hr>
+  <% end %>
+<% end %>
+
 <hr>
 <h2>Все комментарии</h2>
 <br>
