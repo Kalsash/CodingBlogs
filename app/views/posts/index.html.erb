@@ -33,7 +33,7 @@
           <article class="box style2">
             <%= link_to image_tag("codecode.jpg", :alt => ""), post_path(post), :class => 'image featured' %>
             <%= link_to post.title, post_path(post), :class => 'btn btn-outline-primary' %>
-            <p><%= post.body %></p>
+            <p><%= post.body[0..150] %></p>
           </article>
         </div>
         <% end %>

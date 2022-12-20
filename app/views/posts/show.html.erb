@@ -19,16 +19,21 @@
 <br>
 <% @post.comments.each do |comment| %>
   <div class = "alert alert-light">
-    <p> <strong> <%= comment.username %>></strong> <%=comment.body %></p>
+    <div> <strong> <%= comment.username %>></strong> <%=comment.body %></div>
+    <hr>
   </div>
 <% end %>
 
 <hr>
 <h2>Добавление комментария</h2>
-<%= form_for ([@post, @post.comments.build]) do |f| %>
+<%= form_for ([@post, @post.comments.build])  do |f| %>
+  <div class="col-md-16">
   <p>
-    Пользователь<br>
-    <%= f.text_field(:username, {:class => 'form-control'}) %>
+    <% if user_signed_in? %>
+      <%= f.hidden_field :username, :value =>current_user.nickname, :class => 'form-control' %></div>
+    <% else %>
+    <%= f.hidden_field :username, :value =>"Guest", :class => 'form-control' %></div>
+    <% end %>
   </p>
   <p>
     Текст комментария<br>
