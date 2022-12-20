@@ -1,11 +1,13 @@
 Rails.application.routes.draw do
+  get 'users/index'
   devise_for :users
 
   devise_scope :user do
     get '/users/sign_out' => 'devise/sessions#destroy'
   end
+
   get 'persons/profile'
-  get 'admin/profile'
+  match '/users',   to: 'users#index',   via: 'get'
   root 'posts#index', as: "home"
 
   get 'about' => 'pages#about', as: "about"

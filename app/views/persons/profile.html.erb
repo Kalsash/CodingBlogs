@@ -1,2 +1,21 @@
-<h1>Profile</h1>
-<p>Your Login </p>
+<% if user_signed_in? %>
+  <% if current_user.admin? %>
+    <br>
+    <h1 align="center">AdminArea</h1>
+    <article class="box style2">
+   <p>Admin Email is  "<%= current_user.email%>"</p>
+    <p>Admin NickName is  "<%= current_user.nickname%>"</p>
+      <li><%= link_to "ViewUsers", users_path, :class => 'btn btn-dark'%></li>
+      <br>
+            <li><%= link_to "Create Post", new_admin_post_path, :class => 'btn btn-dark'%></li>
+    </article>
+  <% else %>
+    <br>
+    <h1 align="center">Profile</h1>
+    <article class="box style2">
+      <p>Your Email is  "<%= current_user.email%>"</p>
+      <p>Your NickName is  "<%= current_user.nickname%>"</p>
+    </article>
+  <% end %>
+<% end %>
+
