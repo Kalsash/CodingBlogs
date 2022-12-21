@@ -7,7 +7,9 @@
     <p>Admin NickName is  "<%= current_user.nickname%>"</p>
       <li><%= link_to "ViewUsers", users_path, :class => 'btn btn-dark'%></li>
       <br>
-            <li><%= link_to "Create Post", new_admin_post_path, :class => 'btn btn-dark'%></li>
+      <li><%= link_to "ViewUsersMessages", contacts_path, :class => 'btn btn-dark'%></li>
+      <br>
+      <li><%= link_to "Create Post", new_admin_post_path, :class => 'btn btn-dark'%></li>
     </article>
   <% else %>
     <br>
@@ -15,7 +17,12 @@
     <article class="box style2">
       <p>Your Email is  "<%= current_user.email%>"</p>
       <p>Your NickName is  "<%= current_user.nickname%>"</p>
+      <li><%= link_to "Edit", edit_user_registration_path, :class => 'btn btn-dark'%></li>
+      <li><%= link_to "ForgotPassword", edit_user_password_path, :class => 'btn btn-dark'%></li>
+
     </article>
   <% end %>
+<% else %>
+  <% controller.redirect_to home_path %>
 <% end %>
 

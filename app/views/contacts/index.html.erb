@@ -1,5 +1,7 @@
+<% if user_signed_in? %>
+  <% if current_user.admin? %>
 <br>
-<h1>Contacts#index</h1>
+<h1>Messages from users</h1>
 <% @contact.each do |contact| %>
   <div class="col-4 col-6-medium col-12-small">
     <article class="box style2">
@@ -10,4 +12,11 @@
     </article>
     <hr>
   </div>
+<% end %>
+  <% else %>
+    <% controller.redirect_to home_path %>
+  <% end %>
+<% else %>
+<% controller.redirect_to home_path %>
+
 <% end %>
