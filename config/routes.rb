@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'contacts/index'
   get 'users/index'
   devise_for :users
 
@@ -15,6 +16,7 @@ Rails.application.routes.draw do
   resources :posts, only: [:show, :index] do
     resources :comments
   end
+  resources :contacts
   namespace :admin do
 
     resources :posts, except: [:show, :index]

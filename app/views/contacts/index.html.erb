@@ -1,0 +1,13 @@
+<br>
+<h1>Contacts#index</h1>
+<% @contact.each do |contact| %>
+  <div class="col-4 col-6-medium col-12-small">
+    <article class="box style2">
+      <p> Name: <%= contact.name %></p>
+      <p>Email: <%= contact.email%></p>
+      <p>Subject: <%= contact.subject %></p>
+      <p>Message: <%= contact.message %></p>
+    </article>
+    <hr>
+  </div>
+<% end %>
