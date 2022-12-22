@@ -13,23 +13,23 @@
     <hr>
   <% end %>
 <% end %>
-<hr>
-<h2>Add a comment</h2>
 <%= form_for ([@post, @post.comments.build])  do |f| %>
   <div class="col-md-16">
     <p>
       <% if user_signed_in? %>
+      <hr>
+      <h2>Add a comment</h2>
       <%= f.hidden_field :username, :value =>current_user.email[0..current_user.email.index('@')-1], :class => 'form-control' %></div>
+      <p>
+        Text<br>
+        <%= f.text_area(:body, {:class => 'form-control'}) %>
+      </p>
+      <p>
+        <%= f.submit("Add", { :class => 'btn btn-warning'}) %>
+      </p>
     <% else %>
         <%= f.hidden_field :username, :value =>"Guest", :class => 'form-control' %></div>
     <% end %>
-    </p>
-    <p>
-      Text<br>
-      <%= f.text_area(:body, {:class => 'form-control'}) %>
-    </p>
-    <p>
-      <%= f.submit("Add", { :class => 'btn btn-warning'}) %>
     </p>
 <% end %>
 <hr>

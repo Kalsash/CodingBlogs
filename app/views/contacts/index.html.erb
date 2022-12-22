@@ -9,6 +9,7 @@
       <p>Email: <%= contact.email%></p>
       <p>Subject: <%= contact.subject %></p>
       <p>Message: <%= contact.message %></p>
+      <%= button_to "Delete", contact_path(contact),  method: :delete, :class => 'btn btn-danger' %>
     </article>
     <hr>
   </div>

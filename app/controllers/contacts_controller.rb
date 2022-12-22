@@ -13,7 +13,7 @@ class ContactsController < ApplicationController
   def update
     @contact = Contact.find(params[:id])
     if @contact.update(post_params)
-      redirect_to home_path
+      redirect_to contact_path
     else
       render 'edit'
     end
