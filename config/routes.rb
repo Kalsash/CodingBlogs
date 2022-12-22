@@ -11,6 +11,7 @@ Rails.application.routes.draw do
 
    get 'persons/profile', as: 'user_root'
   resources :users, only: [:show, :index]
+  delete "users/:id", to: "users#destroy"
   resources :posts, only: [:show, :index] do
     resources :comments
   end

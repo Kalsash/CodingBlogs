@@ -5,7 +5,7 @@
 <% @user.each do |u| %>
   Email: <%= u.email %><br/>
       <%= link_to u.email, user_path(u), :class => 'btn btn-outline-primary' %>
-      <%= button_to "Delete", users_path(u),  method: :delete, :class => 'btn btn-danger' %>
+      <%= button_to "Delete", user_path(u),  method: :delete, :class => 'btn btn-danger' %>
       <hr>
 <% end %>
   <% else %>
