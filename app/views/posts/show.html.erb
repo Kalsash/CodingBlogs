@@ -19,7 +19,7 @@
       <% if user_signed_in? %>
       <hr>
       <h2>Add a comment</h2>
-      <%= f.hidden_field :username, :value =>current_user.email[0..current_user.email.index('@')-1], :class => 'form-control' %></div>
+      <%= f.hidden_field :username, :value =>current_user.username, :class => 'form-control' %></div>
       <p>
         Text<br>
         <%= f.text_area(:body, {:class => 'form-control'}) %>

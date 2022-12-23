@@ -4,7 +4,7 @@
     <h1 align="center">AdminArea</h1>
     <article class="box style2">
       <h3>Admin Email is  <i><%= current_user.email%></i></h3>
-<!--      <h3>Admin NickName is  <i><%#= current_user.nickname%></i></h3>-->
+      <h3>Admin NickName is  <i><%= current_user.username%></i></h3>
       <li><%= link_to "ViewUsers", users_path, :class => 'btn btn-dark'%></li>
       <br>
       <li><%= link_to "ViewUsersMessages", contacts_path, :class => 'btn btn-dark'%></li>
@@ -16,7 +16,7 @@
     <h1 align="center">Profile</h1>
     <article class="box style2">
       <h3>Your Email is  <i><%= current_user.email%></i></h3>
-<!--      <h3>Your NickName is  <i><%#= current_user.nickname%></i></h3>-->
+      <h3>Your NickName is  <i><%= current_user.username%></i></h3>
       <li><%= link_to "Edit", edit_user_registration_path, :class => 'btn btn-dark'%></li>
 
     </article>
